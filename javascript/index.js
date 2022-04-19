@@ -6,85 +6,16 @@ import inquirer from "inquirer";
 import open from "open";
 
 const random = Math.floor(Math.random() * 3);
-const choices = ["Rock", "Paper", "Scissors", "Quit", "About the author"];
+const choices = ["Rock", "Paper", "Scissors", "About the author", "Quit"];
 
 // Clear the console
 clear();
 
 function aboutMe() {
-  const generate = (text) => {
-    const theme = {
-      colors: [
-        "#FFFFFF",
-        "#7285B7",
-        "#FF9DA4",
-        "#FFC58F",
-        "#FFEEAD",
-        "#D1F1A9",
-        "#99FFFF",
-        "#BBDAFF",
-        "#EBBBFF",
-        "#718c00",
-        "#c82829",
-        "#3e999f",
-        "#6796e6",
-        "#cd9731",
-        "#f44747",
-        "#b267e6",
-      ],
-      background: "#002451",
-      foreground: "#ffffff",
-    };
-
-    let horizontalLayout = "default";
-    let verticalLayout = "default";
-    let font = "ANSI Shadow";
-
-    let coloredData = "";
-    let colorsIndex = 0;
-    let data;
-
-    try {
-      data = figlet.textSync(text, {
-        font: font,
-        horizontalLayout: horizontalLayout,
-        verticalLayout: verticalLayout,
-      });
-    } catch (error) {
-      return error;
-    }
-    for (let i = 0; i < data.length; i++) {
-      let character = data.charAt(i);
-      if (character !== "_") {
-        if (
-          data.charAt(i - 1) === "_" ||
-          data.charAt(i - 1) === " " ||
-          data.charAt(i - 1) === "."
-        ) {
-          colorsIndex++;
-          if (colorsIndex >= theme.colors.length) colorsIndex = 0;
-        }
-        coloredData += chalk
-          .hex(theme.colors[colorsIndex])
-          .bgHex(theme.background)(data.charAt(i));
-      } else {
-        coloredData += chalk.hex(theme.foreground).bgHex(theme.background)(
-          data.charAt(i)
-        );
-      }
-    }
-    return coloredData;
-  };
-
-  let name;
-  if (process.stdout.columns >= 95) {
-    name = chalk.bold(generate("                   Vinesh Rajpurohit ⬢"));
-  } else {
-    name = chalk.bold.cyanBright("                   Vinesh Rajpurohit ⬢");
-  }
+  let name = "Vinesh Rajpurohit ⬢";
 
   const data = {
-    name: name,
+    name: chalk.white.bold(name),
     handle: chalk.white("@vinesh27"),
     title: chalk.hex("#6495ED")("Java and JavaScript Dev"),
     fact: chalk.hex("#00FFFF")(
@@ -92,13 +23,13 @@ function aboutMe() {
     ),
     email: chalk.hex("#5887FF")("mailto:vinitrajpurohit00@gmail.com"),
     discord: chalk.hex("#44BBA4")(
-      "https://discord.com/users/547025590587359233"
+      "https://discord.com/users/547025590587359233 || vN1t#4632"
     ),
     twitter: chalk.hex("#55C1FF")("https://twitter.com/vineshCodes"),
     github: chalk.hex("#E3DAFF")("https://github.com/vinesh27"),
     website: chalk.hex("#9FFFCB")("https://vinesh.codes [WIP]"),
     npx: chalk.hex("#06D6A0")("npx vinesh"),
-
+    labelName: chalk.white.bold("        Name:"),
     labelTitle: chalk.hex("#6a8ed2").bold("       Title:"),
     labelFact: chalk.hex("#2bfbaa").bold("    Fun Fact:"),
     labelEmail: chalk.hex("#12c2e9").bold("       Email:"),
@@ -113,23 +44,20 @@ function aboutMe() {
 
   const me = boxen(
     [
-      `${data.name}`,
-      ``,
+      `${data.labelName}  ${data.name}`,
       `${data.labelTitle}  ${data.title}`,
-      ``,
       `${data.labelFact}  ${data.fact}`,
-      ``,
       `${data.labelEmail}  ${data.email}`,
       `${data.labelTwitter}  ${data.twitter}`,
       `${data.labelGitHub}  ${data.github}`,
-      `${data.labelDiscord}  ${data.discord} || vN1t#4632`,
+      `${data.labelDiscord}  ${data.discord}`,
       `${data.labelWebsite}  ${data.website}`,
       `${data.labelCard}  ${data.npx}`,
       ``,
-      `${chalk.bold("Hi there! I'm Vinesh 👨‍💻. I'm a Full Stack")}`,
       `${chalk.bold(
-        "Web Developer 🌐 and a Homosapien 👨 (Shoutout to all my homosapien "
+        "Hi there! I'm Vinesh 👨‍💻. I'm a Full Stack Web Developer 🌐"
       )}`,
+      `${chalk.bold("and a Homosapien 👨 (Shoutout to all my homosapien ")}`,
       `${chalk.bold(
         "friends) from India 🌏. I love to explore, learn, innovate and "
       )}`,
@@ -173,7 +101,7 @@ function aboutMe() {
           value: () => {
             open("mailto:vinitrajpurohit00@gmail.com");
             console.log(
-              "Looking forward to hearing your message and replying to you!\n"
+              "Looking forward to hearing your message and replying to you!"
             );
           },
         },
@@ -181,13 +109,13 @@ function aboutMe() {
           name: `Visit my ${chalk.cyanBright.bold("site")}? [WIP] 🚀`,
           value: () => {
             open("https://vinesh.codes");
-            console.log("Thanks for the visit to my site!\n");
+            console.log("Thanks for the visit to my site!");
           },
         },
         {
           name: "Exit 👋",
           value: () => {
-            console.log("👋 Bye\n");
+            console.log("👋 Bye");
           },
         },
       ],
@@ -235,15 +163,14 @@ function play() {
       let result = calculateWin(answers.name);
 
       if (result === "Quit") {
-        shouldContinue = false;
-        console.log("\n👋 Bye!\n");
+        console.log("👋 Bye!");
       } else if (result === "About") {
         aboutMe();
       } else {
         console.log(
-          `You chose ${answers.name} and computer chose ${choices[random]}.\n`
+          `You chose ${answers.name} and computer chose ${choices[random]}.`
         );
-        console.log(`You ${result}!\n`);
+        console.log(`You ${result}!`);
         inquirer
           .prompt([
             {
@@ -255,7 +182,7 @@ function play() {
           ])
           .then((answers) => {
             if (answers.continue) play();
-            else console.log("\n👋 Bye!\n");
+            else console.log("👋 Bye!\n");
           });
       }
     });
