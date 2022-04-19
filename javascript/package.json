@@ -1,8 +1,11 @@
 {
-  "name": "cooler-rock-paper-scissor",
+  "name": "cooler-rps",
   "version": "1.0.0",
   "description": "A cooler version of the Rock Paper Scissors game made in Java, JS & Python",
   "main": "index.js",
+  "bin": {
+    "coolerRPS": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
