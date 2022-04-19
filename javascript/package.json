@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vinesh27/cooler-rock-paper-scissors.git"
+    "url": "git+https://github.com/vinesh27/cooler-rps.git"
   },
   "keywords": [
     "nodejs",
@@ -24,9 +24,9 @@
   "author": "vinesh27",
   "license": "GNU GPL v3.0",
   "bugs": {
-    "url": "https://github.com/vinesh27/cooler-rock-paper-scissors/issues"
+    "url": "https://github.com/vinesh27/cooler-rps/issues"
   },
-  "homepage": "https://github.com/vinesh27/cooler-rock-paper-scissors#readme",
+  "homepage": "https://github.com/vinesh27/cooler-rps#readme",
   "dependencies": {
     "boxen": "^6.2.1",
     "chalk": "^5.0.1",
