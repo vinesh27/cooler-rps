@@ -1,14 +1,14 @@
 {
   "name": "cooler-rock-paper-scissor",
   "version": "1.0.0",
-  "description": "A Cooler version of the Rock Paper Scissors game which uses Prompt",
+  "description": "A cooler version of the Rock Paper Scissors game made in Java, JS & Python",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vinesh27/Cooler-RockPaperScissors.git"
+    "url": "git+https://github.com/vinesh27/cooler-rock-paper-scissors.git"
   },
   "keywords": [
     "nodejs",
@@ -21,9 +21,9 @@
   "author": "vinesh27",
   "license": "GNU GPL v3.0",
   "bugs": {
-    "url": "https://github.com/vinesh27/Cooler-RockPaperScissors/issues"
+    "url": "https://github.com/vinesh27/cooler-rock-paper-scissors/issues"
   },
-  "homepage": "https://github.com/vinesh27/Cooler-RockPaperScissors#readme",
+  "homepage": "https://github.com/vinesh27/cooler-rock-paper-scissors#readme",
   "dependencies": {
     "boxen": "^6.2.1",
     "chalk": "^5.0.1",
