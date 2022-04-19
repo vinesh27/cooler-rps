@@ -1,5 +1,6 @@
 # cooler-rps
-A cooler version of the Rock Paper Scissors game made in Java, JS &amp; Python
+
+A cooler version of the Rock Paper Scissors game made in JS
 
 ## Usage
 
