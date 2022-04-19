@@ -55,7 +55,7 @@ function aboutMe() {
       `${data.labelCard}  ${data.npx}`,
       ``,
       `${chalk.bold(
-        "Hi there! I'm Vinesh 👨‍💻. I'm a Full Stack Web Developer 🌐"
+        "Hi there! I'm 👨‍💻 Vinesh. I'm a Full Stack Web Developer 🌐"
       )}`,
       `${chalk.bold("and a Homosapien 👨 (Shoutout to all my homosapien ")}`,
       `${chalk.bold(
