@@ -1,7 +1,7 @@
 {
   "name": "cooler-rps",
-  "version": "1.0.0",
-  "description": "A cooler version of the Rock Paper Scissors game made in Java, JS & Python",
+  "version": "1.0.1",
+  "description": "A cooler version of the Rock Paper Scissors game made in JS",
   "main": "index.js",
   "bin": {
     "coolerRPS": "index.js"
